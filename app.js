@@ -22,6 +22,7 @@ var usersRouter = require('./routes/users');
 var dominosRouter = require('./routes/dominos');
 var addmodsRouter = require('./routes/addmods');
 var selectorRouter = require('./routes/selector');
+var resourceRouter = require('./routes/resource');
 
 var app = express();
 
@@ -40,6 +41,7 @@ app.use('/users', usersRouter);
 app.use('/dominos', dominosRouter);
 app.use('/addmods', addmodsRouter);
 app.use('/selector', selectorRouter);
+app.use('/resource', resourceRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

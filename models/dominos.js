@@ -1,5 +1,5 @@
 const mongoose = require("mongoose") 
-const dominoschema = mongoose.Schema({
+const dominosSchema = mongoose.Schema({
 Item_name: String,
 Quantity: Number,
 price: String

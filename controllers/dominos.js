@@ -1,9 +1,16 @@
 var dominos = require('../models/dominos'); 
  
 // List of all dominos 
-exports.dominos_list = function(req, res) { 
-    res.send('NOT IMPLEMENTED: dominos list'); 
-}; 
+exports.dominos_list = async function(req, res) { 
+    try{ 
+        thedominos = await dominos.find(); 
+        res.send(thedominos); 
+    } 
+    catch(err){ 
+        res.status(500); 
+        res.send(`{"error": ${err}}`); 
+    }   
+};  
  
 // for a specific dominos. 
 exports.dominos_detail = function(req, res) { 
@@ -42,3 +49,16 @@ exports.dominos_delete = function(req, res) {
 exports.dominos_update_put = function(req, res) { 
     res.send('NOT IMPLEMENTED: dominos update PUT' + req.params.id); 
 }; 
+
+// VIEWS 
+// Handle a show all view 
+exports.dominos_view_all_Page = async function(req, res) { 
+    try{ 
+        thedominos = await dominos.find(); 
+        res.render('dominos', { title: 'dominos Search Results', results: thedominos }); 
+    } 
+    catch(err){ 
+        res.status(500); 
+        res.send(`{"error": ${err}}`); 
+    }   
+};

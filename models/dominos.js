@@ -1,6 +1,6 @@
 const mongoose = require("mongoose") 
 const dominosSchema = mongoose.Schema({
-Item_name: String,
+Itemname: String,
 Quantity: Number,
 price: String
 })

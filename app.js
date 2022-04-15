@@ -65,19 +65,19 @@ async function recreateDB(){
   // Delete everything 
 await dominos.deleteMany(); 
 
- let instance1 = new dominos({Item_name:"Pizza1", Quantity:2, price:"two five USD"}); 
+ let instance1 = new dominos({Itemname:"Pizza1", Quantity:2, price:"two five USD"}); 
  instance1.save( function(err,doc) { 
  if(err) return console.error(err); 
  console.log("First object saved") 
  });
 
- let instance2 = new dominos({Item_name:"Pizza2", Quantity:3, price:"two five USD"}); 
+ let instance2 = new dominos({Itemname:"Pizza2", Quantity:3, price:"two five USD"}); 
  instance2.save( function(err,doc) { 
  if(err) return console.error(err); 
  console.log("Second object saved") 
  });
 
- let instance3 = new dominos({Item_name:"Pizza3", Quantity:4, price:"two five USD"}); 
+ let instance3 = new dominos({Itemname:"Pizza3", Quantity:4, price:"two five USD"}); 
  instance3.save( function(err,doc) { 
  if(err) return console.error(err); 
  console.log("Third object saved") 

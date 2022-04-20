@@ -5,7 +5,12 @@ block content
   - let dominosid = toShow._id
   - let Itemname = toShow.Itemname
   - let Quantity = toShow.Quantity
-  - let price = toShow.price"text-center", action=actionid, method="PUT") 
+  - let price = toShow.price 
+  div.row(class='mb-2')
+   div.mr-1 ID is
+   div #{dominosid}
+  - let actionid = "/resource/dominos/" + dominosid 
+  form(id='dominosForm',class="text-center", action=actionid, method="PUT") 
     div.form-group 
         label.dominosAttr(for='Itemname') Itemname 
         input#Itemname(type='text', name='Itemname', value= Itemname) 

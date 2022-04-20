@@ -1,11 +1,15 @@
 extends layout 
  
 block content 
- h1= title 
+ h1(class="text-center")= title 
+ if (toShow == null) 
+  h2 No instance to delete 
+ else
   - let dominosid = toShow._id
-  - let Itemname = toShow.Itemname
+  - let Itemnamename = toShow.Itemnamename
   - let Quantity = toShow.Quantity
-  - let price = toShow.price 
+  - let price = toShow.price
+
   div.row(class='mb-2')
    div.mr-1 ID is
    div #{dominosid}
@@ -15,10 +19,10 @@ block content
         label.dominosAttr(for='Itemname') Itemname 
         input#Itemname(type='text', name='Itemname', value= Itemname) 
     div.form-group 
-        label.dominosAttr(for='Quantity') Quantity
+        label.dominosAttr(for='Quantity') Location
         input#Quantity(type='text', name='Quantity', value= Quantity) 
     div.form-group 
-        label.hotelAttr(for='price') price 
+        label.dominosAttr(for='price') price 
         input#price(type='number', name='price', value= price) 
     input(type="submit" class="btn btn-warning m-2") 
  

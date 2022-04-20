@@ -13,8 +13,8 @@ block content
   div.row(class='mb-2')
    div.mr-1 ID is
    div #{dominosid}
-  - let actionid = "/resource/hotel/" + dominosid 
-  form(id='hotelForm',class="text-center", action=actionid, method="PUT") 
+  - let actionid = "/resource/dominos/" + dominosid 
+  form(id='dominosForm',class="text-center", action=actionid, method="PUT") 
     div.form-group 
         label.dominosAttr(for='Itemname') Itemname 
         input#Itemname(type='text', name='Itemname', value= Itemname) 

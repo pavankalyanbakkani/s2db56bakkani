@@ -6,7 +6,7 @@ block content
   h2 No instance to delete 
  else
   - let dominosid = toShow._id
-  - let Itemnamename = toShow.Itemnamename
+  - let Itemname = toShow.Itemname
   - let Quantity = toShow.Quantity
   - let price = toShow.price
 
@@ -19,11 +19,11 @@ block content
         label.dominosAttr(for='Itemname') Itemname 
         input#Itemname(type='text', name='Itemname', value= Itemname) 
     div.form-group 
-        label.dominosAttr(for='Quantity') Location
-        input#Quantity(type='text', name='Quantity', value= Quantity) 
+        label.dominosAttr(for='Quantity') Quantity
+        input#Quantity(type='number', name='Quantity', value= Quantity) 
     div.form-group 
         label.dominosAttr(for='price') price 
-        input#price(type='number', name='price', value= price) 
+        input#price(type='text', name='price', value= price) 
     input(type="submit" class="btn btn-warning m-2") 
  
   script. 

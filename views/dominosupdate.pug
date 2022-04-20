@@ -1,0 +1,45 @@
+extends layout 
+ 
+block content 
+ h1(class="text-center")= title 
+ if (toShow == null) 
+  h2 No instance to delete 
+ else
+  - let dominosid = toShow._id
+  - let Itemname = toShow.Itemname
+  - let Quantity = toShow.Quantity
+  - let price = toShow.price
+
+  div.row(class='mb-2')
+   div.mr-1 ID is
+   div #{dominosid}
+  - let actionid = "/resource/hotel/" + dominosid 
+  form(id='hotelForm',class="text-center", action=actionid, method="PUT") 
+    div.form-group 
+        label.dominosAttr(for='Itemname') Itemname 
+        input#Itemname(type='text', name='Itemname', value= Itemname) 
+    div.form-group 
+        label.dominosAttr(for='Quantity') Quantity
+        input#Quantity(type='text', name='Quantity', value= Quantity) 
+    div.form-group 
+        label.hotelAttr(for='price') price 
+        input#price(type='number', name='price', value= price) 
+    input(type="submit" class="btn btn-warning m-2") 
+ 
+  script. 
+    document.forms['dominosForm'].addEventListener('submit', (event) => { 
+        event.preventDefault(); 
+        // TODO do something here to show user that form is being submitted 
+        fetch(event.target.action, { 
+            method: 'PUT', 
+            body: new URLSearchParams(new FormData(event.target)) // event.target is the form 
+        }).then((resp) => { 
+            return resp.json(); // or resp.text() or whatever the server sends 
+        }).then((body) => { 
+            alert("Update succeded") 
+            // TODO handle body 
+        }).catch((error) => { 
+            // TODO handle error 
+            alert("Update failed " + error ) 
+        }); 
+        });

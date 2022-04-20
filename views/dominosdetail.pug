@@ -1,0 +1,24 @@
+extends layout
+
+block content
+ h1= title
+
+ - let dominosid = toShow._id
+ - let Itemname= toShow.Itemname
+ - let Quantity = toShow.Quantity
+ - let price = toShow.price
+    
+  div
+    div.row
+      div(class='dominosAttr mr-3') dominos ID is:
+      div #{dominosid}
+    div.row
+      div(class='dominosAttr mr-3') Itemname is:
+      div #{Itemname}
+    div.row
+      div(class='dominosAttr mr-3') Quantity is:
+      div #{Quantity}
+    div.row
+      div(class='dominosAttr mr-3') price is:
+      div #{price}
+      

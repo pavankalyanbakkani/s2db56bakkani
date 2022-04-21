@@ -116,32 +116,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
-
-// We can seed the collection if needed on server start
-async function recreateDB(){ 
-  // Delete everything 
-await dominos.deleteMany(); 
-
- let instance1 = new dominos({Itemname:"cheese burst", Quantity:2, price:"two five USD"}); 
- instance1.save( function(err,doc) { 
- if(err) return console.error(err); 
- console.log("First object saved") 
- });
-
- let instance2 = new dominos({Itemname:"farm house", Quantity:3, price:"two five USD"}); 
- instance2.save( function(err,doc) { 
- if(err) return console.error(err); 
- console.log("Second object saved") 
- });
-
- let instance3 = new dominos({Itemname:"chicken toast", Quantity:4, price:"two five USD"}); 
- instance3.save( function(err,doc) { 
- if(err) return console.error(err); 
- console.log("Third object saved") 
- });
-
-} 
+module.exports = app; 
 
 let reseed = true; 
 if (reseed) { recreateDB();}

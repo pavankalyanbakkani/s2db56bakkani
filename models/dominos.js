@@ -5,11 +5,12 @@ Itemname:{
     minLength: 1,
     maxLength: 15
 } ,   
-Quantity: Number,
-price: {
-    type: String,
-    minLength: 1,
-    maxLength: 13}
+Quantity: {
+    type : Number,
+    min: 1,
+    max: 2
+},
+price: String
 })
 
 module.exports = mongoose.model("dominos", dominosSchema) 

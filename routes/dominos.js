@@ -3,8 +3,7 @@ const dominos_controlers= require('../controllers/dominos');
 var router = express.Router();
 
 
-// A little function to check if we have an authorized user and continue on
-or
+// A little function to check if we have an authorized user and continue on 
 // redirect to login.
 const secured = (req, res, next) => {
 if (req.user){

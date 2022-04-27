@@ -1,6 +1,10 @@
 const mongoose = require("mongoose") 
 const dominosSchema = mongoose.Schema({
-Itemname: String,
+Itemname:{
+    type: String,
+    minLength: 1,
+    maxLength: 15
+} ,   
 Quantity: Number,
 price: String
 })

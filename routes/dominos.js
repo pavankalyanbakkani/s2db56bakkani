@@ -17,7 +17,7 @@ res.redirect("/login");
 router.get('/', dominos_controlers.dominos_view_all_Page );
 
 router.get('/detail', dominos_controlers.dominos_view_one_Page);
-router.get('/create', dominos_controlers.dominos_create_Page);
+router.get('/create',secured, dominos_controlers.dominos_create_Page);
 router.get('/update',secured, dominos_controlers.dominos_update_Page);
-router.get('/delete', dominos_controlers.dominos_delete_Page);
+router.get('/delete',secured, dominos_controlers.dominos_delete_Page);
 module.exports = router;
